@@ -131,7 +131,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   loadingText: {
-    marginTop: 12,
     fontSize: 14,
     color: Colors.textTertiary,
   },
