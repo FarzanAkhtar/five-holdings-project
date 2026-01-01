@@ -1,21 +1,63 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Category-based Product Browser
+
+A React Native CLI application that allows users to browse products by category with infinite scroll pagination and search functionality.
+
+## Features
+
+- **Category Selection**: Horizontal scrollable list of product categories
+- **Product Grid**: 2-column responsive grid displaying product cards
+- **Infinite Scroll**: Automatic loading when user scrolls near bottom
+- **Client-side Search**: Filter displayed products by title
+- **Caching**: React Query for efficient data fetching and caching
+- **Loading/Error States**: Proper UI feedback for all async operations
+
+## Tech Stack
+
+- React Native CLI 0.83.1
+- TypeScript
+- React Query (TanStack Query) for data fetching
+- react-native-safe-area-context for safe area handling
+
+## Project Structure
+
+```
+src/
+├── api/
+│   └── products.ts              # API service layer
+├── components/
+│   ├── CategoryList.tsx         # Horizontal category selector
+│   ├── ProductCard.tsx          # Individual product card
+│   ├── ProductList.tsx          # Product grid with infinite scroll
+│   ├── SearchBar.tsx            # Search input
+│   ├── EmptyState.tsx           # Empty state display
+│   └── index.ts                 # Barrel export
+├── screens/
+│   ├── ProductBrowserScreen.tsx # Main screen with state management
+│   └── index.ts                 # Barrel export
+├── hooks/
+│   ├── useCategories.ts         # React Query hook for categories
+│   ├── useProducts.ts           # Infinite query hook for products
+│   └── index.ts                 # Barrel export
+├── types/
+│   └── index.ts                 # TypeScript interfaces
+└── constants/
+    ├── colors.ts                # Color palette constants
+    └── index.ts                 # API URLs, pagination config
+```
 
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## Step 1: Start Metro
+## Step 1: Install Node Modules and Start Metro
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+First, you will need to install the required `node_modules` and then run **Metro**, the JavaScript build tool for React Native.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Run the following commands from the root of your React Native project:
 
 ```sh
-# Using npm
+npm install
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
 ## Step 2: Build and run your app
@@ -25,11 +67,7 @@ With Metro running, open a new terminal window/pane from the root of your React 
 ### Android
 
 ```sh
-# Using npm
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
 ### iOS
@@ -53,45 +91,4 @@ For more information, please visit [CocoaPods Getting Started guide](https://gui
 ```sh
 # Using npm
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
