@@ -75,6 +75,7 @@ export const CategoryList = memo(function CategoryList({
       horizontal
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.listContainer}
+      style={styles.listHeight}
       renderItem={({ item }) => (
         <CategoryItem
           category={item}
@@ -90,9 +91,13 @@ const styles = StyleSheet.create({
   listContainer: {
     paddingHorizontal: 16,
     paddingVertical: 12,
-    gap: 8,
+    gap: 8
+  },
+  listHeight: {
+    maxHeight: 70
   },
   categoryItem: {
+    alignSelf: 'center',
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,

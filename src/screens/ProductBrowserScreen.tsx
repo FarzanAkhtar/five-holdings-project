@@ -66,7 +66,7 @@ export const ProductBrowserScreen = () => {
       />
 
       {selectedCategory && (
-        <>
+        <View style={styles.flex1}>
           <View style={styles.categoryHeader}>
             <Text style={styles.categoryTitle}>{selectedCategoryName}</Text>
             {productsData?.pages[0] && (
@@ -85,7 +85,7 @@ export const ProductBrowserScreen = () => {
             onLoadMore={handleLoadMore}
             searchQuery={searchQuery}
           />
-        </>
+        </View>
       )}
 
       {!selectedCategory && !categoriesLoading && (
@@ -102,6 +102,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.backgroundPrimary,
+  },
+  flex1: {
+    flex: 1,
   },
   header: {
     paddingHorizontal: 16,
