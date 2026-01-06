@@ -45,6 +45,11 @@ src/
     └── index.ts                 # API URLs, pagination config
 ```
 
+## Demo
+
+https://github.com/user-attachments/assets/9100f4b4-a098-4648-95ad-2eb0f0b658f8
+
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
